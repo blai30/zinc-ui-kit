@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=Krita/PythonPlugin
+X-KDE-Library=capture
+X-Python-2-Compatible=false
+Name=UI Kit Capture
+Comment=Captures the Krita window, menus, and command palette

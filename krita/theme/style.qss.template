@@ -1,0 +1,211 @@
+QMainWindow, QDialog {
+    background: %surface.background%;
+}
+
+QWidget {
+    color: %text.primary%;
+}
+
+QDockWidget {
+    background: %surface.panel%;
+}
+
+QDockWidget::title {
+    background: %surface.panel%;
+    padding: 6px 8px;
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: %text.secondary%;
+    padding: 5px 10px;
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+QTabBar::tab:selected {
+    color: %text.strong%;
+    border-bottom: 2px solid %accent.base%;
+}
+
+QTabBar::tab:hover:!selected {
+    color: %text.primary%;
+}
+
+QTabWidget::pane {
+    border: none;
+    background: %surface.panel%;
+}
+
+QMenuBar {
+    background: %surface.background%;
+}
+
+QMenuBar::item:selected {
+    background: %surface.raised%;
+    border-radius: %radius.widget%;
+}
+
+QMenu {
+    background: %surface.raised%;
+    border: 1px solid %border.default%;
+    border-radius: %radius.panel%;
+    padding: 4px;
+}
+
+QMenu::item {
+    padding: 5px 20px 5px 12px;
+    border-radius: %radius.widget%;
+}
+
+QMenu::item:selected {
+    background: %accent.muted%;
+    color: %text.strong%;
+}
+
+QMenu::separator {
+    height: 1px;
+    background: %border.default%;
+    margin: 4px 8px;
+}
+
+QToolTip {
+    background: %surface.raised%;
+    color: %text.primary%;
+    border: 1px solid %border.default%;
+    border-radius: %radius.widget%;
+    padding: 4px 6px;
+}
+
+QPushButton {
+    background: %surface.control%;
+    border: 1px solid transparent;
+    border-radius: %radius.widget%;
+    padding: 4px 12px;
+}
+
+QToolButton {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: %radius.widget%;
+    padding: 0px;
+}
+
+QToolButton::menu-indicator {
+    subcontrol-origin: padding;
+    subcontrol-position: bottom right;
+    right: 1px;
+    bottom: 1px;
+    width: 7px;
+}
+
+QPushButton:hover, QToolButton:hover {
+    background: %surface.raised%;
+    border-color: %border.default%;
+}
+
+QPushButton:pressed, QToolButton:pressed {
+    background: %accent.pressed%;
+    color: %text.strong%;
+}
+
+QToolButton:checked {
+    background: %accent.muted%;
+    border-color: %accent.base%;
+}
+
+QPushButton:focus {
+    border-color: %accent.base%;
+}
+
+QLineEdit, QSpinBox, QDoubleSpinBox, QComboBox, QPlainTextEdit, QTextEdit {
+    background: %surface.control%;
+    border: 1px solid %border.default%;
+    border-radius: %radius.widget%;
+    padding: 3px 6px;
+    selection-background-color: %accent.muted%;
+    selection-color: %text.strong%;
+}
+
+QLineEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus {
+    border-color: %accent.base%;
+}
+
+QComboBox QAbstractItemView {
+    background: %surface.raised%;
+    border: 1px solid %border.default%;
+    selection-background-color: %accent.muted%;
+}
+
+QScrollBar:vertical {
+    background: transparent;
+    width: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:vertical {
+    background: %border.default%;
+    border-radius: 5px;
+    min-height: 24px;
+}
+
+QScrollBar:horizontal {
+    background: transparent;
+    height: 10px;
+    margin: 0;
+}
+
+QScrollBar::handle:horizontal {
+    background: %border.default%;
+    border-radius: 5px;
+    min-width: 24px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line, QScrollBar::add-page, QScrollBar::sub-page {
+    background: transparent;
+    border: none;
+    width: 0;
+    height: 0;
+}
+
+QHeaderView::section {
+    background: %surface.panel%;
+    color: %text.secondary%;
+    border: none;
+    padding: 4px 6px;
+}
+
+QAbstractItemView {
+    background: %surface.background%;
+    alternate-background-color: %surface.panel%;
+    selection-background-color: %accent.muted%;
+    selection-color: %text.strong%;
+    border: none;
+}
+
+QDialog#uikitPalette {
+    background: %surface.raised%;
+    border: 1px solid %border.default%;
+    border-radius: %radius.panel%;
+}
+
+QDialog#uikitPalette QListWidget {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+QDialog#uikitPalette QListWidget::item {
+    padding: 6px 8px;
+    border-radius: %radius.widget%;
+}
+
+QDialog#uikitPalette QListWidget::item:selected {
+    background: %accent.muted%;
+    color: %text.strong%;
+}
+
+KoDockWidgetTitleBar {
+    background: %surface.panel%;
+    color: %text.secondary%;
+}
