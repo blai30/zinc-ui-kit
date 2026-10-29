@@ -8,19 +8,19 @@ from build.blender_package import render_manifest, stage_blender_addon
 PROJECT_ROOT = Path(__file__).parent.parent
 
 META = {
-    "id": "uikit_graphite",
-    "name": "UI Kit Graphite",
-    "tagline": "Modern graphite and blue theme built on Tailwind zinc",
+    "id": "uikit_zinc",
+    "name": "UI Kit Zinc",
+    "tagline": "Modern zinc and rose theme built on Tailwind colors",
     "version": "0.1.0",
     "maintainer": "Brian <brianlai30@outlook.com>",
 }
 
 EXPECTED = """\
 schema_version = "1.0.0"
-id = "uikit_graphite"
+id = "uikit_zinc"
 version = "0.1.0"
-name = "UI Kit Graphite"
-tagline = "Modern graphite and blue theme built on Tailwind zinc"
+name = "UI Kit Zinc"
+tagline = "Modern zinc and rose theme built on Tailwind colors"
 maintainer = "Brian <brianlai30@outlook.com>"
 type = "theme"
 tags = ["Dark"]
@@ -61,10 +61,10 @@ def test_addon_manifest_has_type_and_tags():
 
 def test_theme_manifest_is_unchanged_by_defaults():
     meta = {
-        "id": "uikit_graphite",
+        "id": "uikit_zinc",
         "version": "0.1.1",
-        "name": "UI Kit Graphite",
-        "tagline": "Modern graphite and blue theme built on Tailwind zinc",
+        "name": "UI Kit Zinc",
+        "tagline": "Modern zinc and rose theme built on Tailwind colors",
         "maintainer": "Someone <someone@example.com>",
     }
     text = render_manifest(meta)

@@ -3,7 +3,7 @@ from __future__ import annotations
 from build.colors import to_rgb
 from build.tokens import Tokens
 
-SCHEME_NAME = "UI Kit Graphite"
+SCHEME_NAME = "UI Kit Zinc"
 
 # Shared by Colors:Window and Colors:Complementary.
 WINDOW = {

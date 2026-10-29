@@ -44,7 +44,7 @@ def stage_krita_plugin(root: Path, tokens: Tokens, stage: Path) -> dict:
 
     base = (root / "krita" / "theme" / "base.colors").read_text(encoding="utf-8")
     template = (root / "krita" / "theme" / "style.qss.template").read_text(encoding="utf-8")
-    _write_text(assets / "UIKitGraphite.colors", generate_scheme(base, tokens))
+    _write_text(assets / "UIKitZinc.colors", generate_scheme(base, tokens))
     _write_text(assets / "style.qss", render_qss(template, tokens))
     for name in FONT_FILES:
         shutil.copy2(root / FONT_SOURCE / name, assets / name)

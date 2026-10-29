@@ -69,8 +69,8 @@ def test_status_colors(scheme):
 
 
 def test_scheme_is_named_after_the_package(scheme):
-    assert scheme["General"]["Name"] == "UI Kit Graphite"
-    assert scheme["General"]["ColorScheme"] == "UI Kit Graphite"
+    assert scheme["General"]["Name"] == "UI Kit Zinc"
+    assert scheme["General"]["ColorScheme"] == "UI Kit Zinc"
 
 
 def test_output_has_lf_endings_only():

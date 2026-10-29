@@ -35,7 +35,7 @@ def test_zip_has_the_descriptor_and_package(archive):
 def test_zip_has_generated_and_bundled_assets(archive):
     _, handle = archive
     names = set(handle.namelist())
-    assert "uikit_theme/assets/UIKitGraphite.colors" in names
+    assert "uikit_theme/assets/UIKitZinc.colors" in names
     assert "uikit_theme/assets/style.qss" in names
     assert "uikit_theme/assets/GeistUIKit-Variable.ttf" in names
     assert "uikit_theme/assets/OFL-Geist.txt" in names
@@ -66,5 +66,5 @@ def test_stylesheet_has_no_leftover_placeholders(archive):
 
 def test_scheme_is_named_after_the_package(archive):
     _, handle = archive
-    text = handle.read("uikit_theme/assets/UIKitGraphite.colors").decode("utf-8")
-    assert "Name=UI Kit Graphite" in text
+    text = handle.read("uikit_theme/assets/UIKitZinc.colors").decode("utf-8")
+    assert "Name=UI Kit Zinc" in text

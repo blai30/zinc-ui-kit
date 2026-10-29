@@ -1,6 +1,6 @@
 # UI Kit
 
-A modern, Tailwind-based look for Blender 5.2 and Krita 5.3. Colors, spacing, and fonts are generated from one `tokens/tokens.json`, so both apps share the same Graphite palette (zinc grays with a blue accent). Built with Python, PyQt5 (inside Krita), and the Blender extension system.
+A modern, Tailwind-based look for Blender 5.2 and Krita 5.3. Colors, spacing, and fonts are generated from one `tokens/tokens.json`, so both apps share the same Zinc palette (Tailwind zinc grays with a rose accent). Built with Python, PyQt5 (inside Krita), and the Blender extension system.
 
 ![Krita with the theme](docs/images/krita.png)
 
@@ -8,18 +8,18 @@ It doesn't fork or patch either app, and the default keymaps are untouched. Noth
 
 ## What's in it
 
-- Blender theme (`uikit_graphite`): recolors the interface, panels, widgets, and editor backgrounds
+- Blender theme (`uikit_zinc`): recolors the interface, panels, widgets, and editor backgrounds
 - Blender add-on (`uikit_declutter`): hides tabs, panels, and workspaces by feature group (aimed at game asset work), and sets the fonts
 - Krita plugin (`uikit_theme`): palette, stylesheet, fonts, and a command palette
 
-Colors only come from the Tailwind palette (zinc, blue, red, amber, green). `zinc-935` and `zinc-915` are interpolated between zinc-950 and zinc-900 for the darkest surfaces.
+Colors only come from the Tailwind palette (zinc, rose, red, amber, green, and blue for Blender's Z axis). `zinc-935` and `zinc-915` are interpolated between zinc-950 and zinc-900 for the darkest surfaces.
 
 ## Install
 
 Blender (5.2 or newer), once for each zip:
 
 1. Open Preferences > Get Extensions, then the dropdown at the top right > Install from Disk.
-2. Pick `uikit_graphite-0.1.1.zip` (the theme) or `uikit_declutter-0.1.0.zip` (the add-on).
+2. Pick `uikit_zinc-0.2.0.zip` (the theme) or `uikit_declutter-0.1.0.zip` (the add-on).
 3. Enable the theme under Preferences > Themes, or the add-on under Preferences > Add-ons, if Blender hasn't already.
 
 The add-on has one checkbox per feature group in its preferences:
@@ -74,7 +74,7 @@ Known limits:
 - Blender icons aren't replaced (they're compiled into the app)
 - The Blender theme only covers the interface. Viewport selection colors, node colors, and animation colors are still Blender's defaults
 - Blender context menus open under the cursor (not configurable)
-- In Krita the selected layer row stays a brighter blue, and docker title bars aren't restyled
+- In Krita the docker title bars aren't restyled
 
 ## License
 

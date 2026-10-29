@@ -64,7 +64,7 @@ def build_blender_theme(root: Path, tokens: Tokens) -> Path:
     stage.mkdir(parents=True)
 
     base_xml = (root / "blender" / "theme" / "base_theme.xml").read_text(encoding="utf-8")
-    write_text(stage / "graphite.xml", generate_theme(base_xml, tokens))
+    write_text(stage / "zinc.xml", generate_theme(base_xml, tokens))
     write_text(stage / "blender_manifest.toml", render_manifest(tokens.meta))
 
     output = root / "dist"

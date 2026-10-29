@@ -37,7 +37,7 @@ def _read_scheme(path: str) -> dict:
 
 
 def build_palette(base: QPalette) -> QPalette:
-    sections = _read_scheme(os.path.join(ASSETS, "UIKitGraphite.colors"))
+    sections = _read_scheme(os.path.join(ASSETS, "UIKitZinc.colors"))
     palette = QPalette(base)
     for section, key, role in ROLE_MAP:
         red, green, blue = (int(part) for part in sections[section][key].split(","))
