@@ -1,0 +1,22 @@
+{
+  "name": "zinc-theme",
+  "displayName": "Zinc",
+  "description": "Zinc grays and a rose accent, drawn at 2x with Lucide icons and Geist. Use Screen Scaling 100% and UI Scaling 100%.",
+  "version": "0.1.0",
+  "author": { "name": "Brian Lai", "url": "https://github.com/blai30/zinc-ui-kit" },
+  "contributors": [
+    { "name": "David Capello", "url": "https://davidcapello.com/" },
+    { "name": "Ilija Melentijevic", "url": "https://ilkke.net/" },
+    { "name": "Nicolas Desilets", "url": "https://twitter.com/MapleGecko" }
+  ],
+  "publisher": "blai30",
+  "license": "CC-BY-4.0",
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      { "id": "zinc", "path": ".", "variant": "Dark" }
+    ]
+  }
+}
