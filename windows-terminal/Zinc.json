@@ -1,0 +1,27 @@
+{
+  "schemes": [
+    {
+      "name": "Zinc",
+      "background": "#09090b",
+      "foreground": "#e4e4e7",
+      "cursorColor": "#ff2056",
+      "selectionBackground": "#3f3f46",
+      "black": "#27272a",
+      "red": "#ff6467",
+      "green": "#05df72",
+      "yellow": "#fdc700",
+      "blue": "#51a2ff",
+      "purple": "#ed6aff",
+      "cyan": "#00d3f2",
+      "white": "#d4d4d8",
+      "brightBlack": "#71717b",
+      "brightRed": "#ffa2a2",
+      "brightGreen": "#7bf1a8",
+      "brightYellow": "#ffdf20",
+      "brightBlue": "#8ec5ff",
+      "brightPurple": "#f4a8ff",
+      "brightCyan": "#53eafd",
+      "brightWhite": "#fafafa"
+    }
+  ]
+}

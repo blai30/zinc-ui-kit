@@ -8,8 +8,10 @@ from build.aseprite_theme import build_aseprite_theme
 from build.blender_package import build_blender_addon, build_blender_theme
 from build.fonts import build_fonts
 from build.freecad_pack import build_freecad_pack
+from build.godot_theme import build_godot_theme
 from build.krita_package import build_krita_plugin
 from build.solidcraft_theme import build_solidcraft_theme
+from build.terminal_theme import build_terminal_themes
 from build.tokens import load_tokens
 
 ROOT = Path(__file__).parent.parent
@@ -21,6 +23,7 @@ def main() -> None:
         "target",
         choices=[
             "blender-theme", "blender-addon", "krita-plugin", "freecad-pack", "solidcraft-theme", "aseprite-theme", "fonts",
+            "godot-theme", "terminal-themes",
         ],
     )
     arguments = parser.parse_args()
@@ -34,6 +37,11 @@ def main() -> None:
             print(build_freecad_pack(ROOT, load_tokens(ROOT / "tokens" / "tokens.json")))
         elif arguments.target == "solidcraft-theme":
             print(build_solidcraft_theme(ROOT, load_tokens(ROOT / "tokens" / "tokens.json")))
+        elif arguments.target == "godot-theme":
+            print(build_godot_theme(ROOT, load_tokens(ROOT / "tokens" / "tokens.json")))
+        elif arguments.target == "terminal-themes":
+            for path in build_terminal_themes(ROOT, load_tokens(ROOT / "tokens" / "tokens.json")):
+                print(path)
         elif arguments.target == "aseprite-theme":
             print(build_aseprite_theme(ROOT, load_tokens(ROOT / "tokens" / "tokens.json"), ROOT / "dist"))
         elif arguments.target == "fonts":
