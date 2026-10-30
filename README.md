@@ -1,18 +1,20 @@
 # UI Kit
 
-A modern, Tailwind-based look for Blender 5.2 and Krita 5.3. Colors, spacing, and fonts are generated from one `tokens/tokens.json`, so both apps share the same Zinc palette (Tailwind zinc grays with a rose accent). Built with Python, PyQt5 (inside Krita), and the Blender extension system.
+A modern, Tailwind-based look for Blender 5.2, Krita 5.3, FreeCAD 1.1, and SolidCraft. Colors, spacing, and fonts are generated from one `tokens/tokens.json`, so every app shares the same Zinc palette (Tailwind zinc grays with a rose accent). Built with Python, PyQt5 (inside Krita), and the Blender extension system.
 
 ![Krita with the theme](docs/images/krita.png)
 
-It doesn't fork or patch either app, and the default keymaps are untouched. Nothing is deleted from Blender or Krita, only hidden or restyled.
+It doesn't fork or patch any app, and the default keymaps are untouched. Nothing is deleted, only hidden or restyled.
 
 ## What's in it
 
 - Blender theme (`uikit_zinc`): recolors the interface, panels, widgets, and editor backgrounds
 - Blender add-on (`uikit_declutter`): hides tabs, panels, and workspaces by feature group (aimed at game asset work), and sets the fonts
 - Krita plugin (`uikit_theme`): palette, stylesheet, fonts, and a command palette
+- FreeCAD preference pack (`Zinc Dark`): stylesheet, 3D view and editor colors, and about 290 Lucide-style icons for the core Std, Sketcher, and Part Design commands
+- SolidCraft theme (`Zinc`): interface, viewport, sketch, and Start screen colors
 
-Colors only come from the Tailwind palette (zinc, rose, red, amber, green, and blue for Blender's Z axis). `zinc-935` and `zinc-915` are interpolated between zinc-950 and zinc-900 for the darkest surfaces.
+Colors only come from the Tailwind palette. Surfaces, text, and the accent go through shared roles (`surface.panel`, `accent.base`, ...), so every app layers the same way. Sketch, preview, syntax, and workspace colors keep their own Tailwind families. `zinc-935` and `zinc-915` are interpolated between zinc-950 and zinc-900 for the darkest surfaces.
 
 ## Install
 
@@ -39,6 +41,26 @@ Krita (5.3):
 
 Tools > Scripts > UI Kit Theme turns the whole thing off and restores Krita's own look. `Ctrl+K` (`Cmd+K` on macOS) opens a command palette that searches every Krita action.
 
+FreeCAD (1.1):
+
+1. Open Tools > Addon Manager, then the settings (gear) button, and add a custom repository: `https://github.com/blai30/zinc-ui-kit` with branch `freecad`.
+2. Find "Zinc Theme" in the Addon Manager, install it, and restart FreeCAD.
+3. Open Edit > Preferences > General, pick Zinc Dark under Theme, and click OK.
+4. Restart FreeCAD again so the stylesheet and icons load everywhere.
+
+Applying the pack runs `post.FCMacro`, which saves the icons folder to `BaseApp/Preferences/Bitmaps/CustomPathZincDark`. FreeCAD checks that folder before its built-in icons. To switch back, pick another theme, then remove the icon override in the Python console and restart:
+
+```python
+App.ParamGet("User parameter:BaseApp/Preferences/Bitmaps").RemString("CustomPathZincDark")
+```
+
+The `freecad` branch only holds the `freecad/` folder. A GitHub Action splits it out of `main` on every push, because FreeCAD looks for a pack folder at the root of an addon. For local work, link `freecad/` into your `Mod` folder instead (run `App.getUserAppDataDir()` in the Python console to find it).
+
+SolidCraft:
+
+1. Open the theme settings and import `solidcraft/Zinc.json`.
+2. Pick Zinc. To pick up a newer build, import it again.
+
 ## Build from source
 
 1. Create a venv: `python3 -m venv .venv`.
@@ -50,9 +72,10 @@ Targets:
 
 - `blender-theme`, `blender-addon`: need Blender installed (set `BLENDER_BIN` if it isn't in the default location)
 - `krita-plugin`: no Blender needed
+- `freecad-pack`, `solidcraft-theme`: rewrite the colors in `freecad/Zinc Dark/` and `solidcraft/Zinc.json` in place. Both are committed so they install straight from the repo, and a test fails if they're out of date
 - `fonts`: regenerates the baked fonts from `fonts/source/`
 
-Packages end up in `dist/`. Change a color in `tokens/tokens.json` and rebuild to restyle everything.
+Other packages end up in `dist/`. Change a color in `tokens/tokens.json` and rebuild to restyle everything. Per-app choices live in the mapping files (`build/blender_mapping.py`, `build/freecad_mapping.py`, and so on).
 
 ## Fonts
 
@@ -67,7 +90,7 @@ They're renamed "Geist UI Kit" and "JetBrains Mono UI Kit" so they never clash w
 
 ## Status
 
-Tested on macOS with Blender 5.2.3 and Krita 5.3.4. Windows should work (there's no OS-specific code in the packages) but hasn't been tested. The Krita test harness in `krita/tools/` is macOS only.
+Tested on macOS with Blender 5.2.3 and Krita 5.3.4. Windows should work (there's no OS-specific code in the packages) but hasn't been tested. The Krita test harness in `krita/tools/` is macOS only. FreeCAD 1.1 was tested on Windows.
 
 Known limits:
 
@@ -75,7 +98,10 @@ Known limits:
 - The Blender theme only covers the interface. Viewport selection colors, node colors, and animation colors are still Blender's defaults
 - Blender context menus open under the cursor (not configurable)
 - In Krita the docker title bars aren't restyled
+- FreeCAD workbench selector icons stay stock (workbenches register them by absolute path), and less common commands fall back to FreeCAD's own icons
+- The FreeCAD pack only sets the colors it lists. Leftovers from a previous theme, like Arch or CAM colors, stay as they were
+- FreeCAD additive feature icons are emerald, matching their 3D preview, so they stay distinct from red subtractive ones
 
 ## License
 
-Code is GPL-3.0-or-later, see `LICENSE`. Fonts keep the SIL Open Font License 1.1.
+Code is GPL-3.0-or-later, see `LICENSE`. Fonts keep the SIL Open Font License 1.1. The FreeCAD theme is MIT, and its Lucide-derived icons are ISC, see `freecad/LICENSE`.

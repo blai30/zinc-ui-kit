@@ -1,0 +1,23 @@
+# FreeCAD's Addon Manager needs package.xml at the root of the branch it installs,
+# so freecad/ is split into its own branch for the custom repository to track.
+name: Publish FreeCAD branch
+
+on:
+  push:
+    branches: [main]
+    paths: ["freecad/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  split:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      # Split commits keep their original metadata, so each run fast-forwards the branch.
+      - run: git subtree split --prefix=freecad --branch=freecad
+      - run: git push origin freecad

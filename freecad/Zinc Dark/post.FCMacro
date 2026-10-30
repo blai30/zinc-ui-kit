@@ -1,0 +1,14 @@
+# Registers this pack's icons folder so its SVGs override FreeCAD's built-in command icons.
+# FreeCAD reads Bitmaps/CustomPath* at startup, so the icons appear after a restart.
+from pathlib import Path
+
+import FreeCAD
+
+mod_dir = Path(FreeCAD.getUserAppDataDir()) / "Mod"
+icon_dirs = sorted(mod_dir.glob("*/Zinc Dark/icons"))
+
+if icon_dirs:
+    bitmaps = FreeCAD.ParamGet("User parameter:BaseApp/Preferences/Bitmaps")
+    bitmaps.SetString("CustomPathZincDark", str(icon_dirs[0]))
+else:
+    FreeCAD.Console.PrintWarning("Zinc Dark: icons folder not found under %s\n" % mod_dir)

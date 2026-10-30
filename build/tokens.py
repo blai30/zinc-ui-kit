@@ -20,6 +20,14 @@ class Tokens:
     def hex(self, role: str) -> str:
         return to_hex(self.color(role))
 
+    def resolve(self, name: str) -> Oklch:
+        # A role ("accent.base") or a palette entry ("violet-400").
+        return self.color(name) if name in self.roles else self.palette[name]
+
+    def shade(self, name: str) -> str:
+        # Palette entry name behind a role or palette entry.
+        return self.roles.get(name, name)
+
 
 def load_tokens(path: Path) -> Tokens:
     data = json.loads(path.read_text(encoding="utf-8"))

@@ -34,6 +34,14 @@ def test_hex_resolves_a_role():
     assert tokens.hex("text.strong") == "#fafafa"
 
 
+def test_resolve_accepts_roles_and_palette_entries():
+    tokens = load_tokens(TOKENS_PATH)
+    assert tokens.resolve("accent.base") == tokens.palette["rose-500"]
+    assert tokens.resolve("violet-400") == tokens.palette["violet-400"]
+    assert tokens.shade("accent.base") == "rose-500"
+    assert tokens.shade("violet-400") == "violet-400"
+
+
 def test_unknown_role_raises():
     tokens = load_tokens(TOKENS_PATH)
     with pytest.raises(KeyError, match="surface.missing"):
