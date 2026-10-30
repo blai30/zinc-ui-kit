@@ -1,0 +1,8 @@
+<!-- Zinc Dark for FreeCAD. Drawn on the Lucide grid; Lucide-derived shapes are ISC licensed (lucide.dev). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4d4d8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-base">
+  <path d="M3 18 8 8l6 7 7-10"/>
+  <circle cx="3" cy="18" r="2" fill="#ff637e" stroke="none" class="fill-accent"/>
+  <circle cx="8" cy="8" r="2" fill="#ff637e" stroke="none" class="fill-accent"/>
+  <circle cx="14" cy="15" r="2" fill="#ff637e" stroke="none" class="fill-accent"/>
+  <circle cx="21" cy="5" r="2" fill="#ff637e" stroke="none" class="fill-accent"/>
+</svg>
