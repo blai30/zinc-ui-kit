@@ -33,7 +33,7 @@ ANSI = [
 
 BACKGROUND = "surface.viewport"
 FOREGROUND = "text.primary"
-CURSOR = "accent.base"
+CURSOR = "rose-300"
 SELECTION = "zinc-700"
 SELECTION_TEXT = "text.strong"
 

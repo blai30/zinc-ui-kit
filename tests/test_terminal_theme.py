@@ -39,7 +39,7 @@ def test_ghostty_theme_follows_the_roles():
     settings = dict(line.split(" = ", 1) for line in generate_ghostty(TOKENS).splitlines() if not line.startswith("palette"))
     assert settings["background"] == TOKENS.hex("surface.viewport")
     assert settings["foreground"] == TOKENS.hex("text.primary")
-    assert settings["cursor-color"] == TOKENS.hex("accent.base")
+    assert settings["cursor-color"] == TOKENS.hex("rose-300")
 
 
 def test_both_terminals_share_the_palette():

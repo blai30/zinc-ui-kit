@@ -5,12 +5,12 @@ A Tailwind-based theme for Aseprite 1.3, Blender 5.2, FreeCAD 1.1, Ghostty, Godo
 | Aseprite | Blender |
 | --- | --- |
 | ![Aseprite](docs/images/aseprite.png) | ![Blender](docs/images/blender.png) |
-| **FreeCAD** | **Godot** |
-| ![FreeCAD](docs/images/freecad.png) | ![Godot](docs/images/godot.png) |
-| **Krita** | **SolidCraft** |
-| ![Krita](docs/images/krita.png) | ![SolidCraft](docs/images/solidcraft.png) |
-| **Windows Terminal** | |
-| ![Windows Terminal](docs/images/windows-terminal.png) | |
+| **FreeCAD** | **Ghostty** |
+| ![FreeCAD](docs/images/freecad.png) | ![Ghostty](docs/images/ghostty.png) |
+| **Godot** | **Krita** |
+| ![Godot](docs/images/godot.png) | ![Krita](docs/images/krita.png) |
+| **SolidCraft** | **Windows Terminal** |
+| ![SolidCraft](docs/images/solidcraft.png) | ![Windows Terminal](docs/images/windows-terminal.png) |
 
 ## What's in it
 
